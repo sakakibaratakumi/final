@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prince Benson Waimai</title>
+</head>
+<body>
+	<h1>Prince Benson Fusion Restaurant</h1>
+	<p>Tasty Treats To Your Door</p>
+	<h2>Here are all our items!</h2>
+	<!--item 1-->
+	<p>SUSHI:123RMB</p>
+	<img src="http://tse2.mm.bing.net/th?id=OIP.H5VsbvxEZ8nkKrgJ3TWXkAHaGq&pid=Api">
+	<br>
+	<!--item 2-->
+	<p>RAMEN:456RMB</p>
+	<img src="https://i2.wp.com/angsarap.net/wp-content/uploads/2014/09/Shoyu-Ramen-Wide.jpg">
+	<br>
+	<!--item 3-->
+	<p>MANHAN QUANXI:123456789RMB</p>
+	<img src="https://wayofchina.com/wp-content/uploads/2018/02/3o120004o8061rs25371.jpg">
+	<br>
+
+	<!--Order Form-->
+	<h2>Place Your Order</h2>
+	<form action="{% url 'order:home_page' %}" method= "POST">
+		{% csrf_token %}
+		<input type= "text" name="item" placeholder="Please Type Which Item You Want"><br>
+		<textarea name="address" placeholder="Please Type Your Address"></textarea><br>
+		<input type="submit" value="Place Your Order">
+	</form>
+	<!--Show Order-->
+	<h1>Your Order:</h1>
+	<p>Item Ordered:{{item}}</p>
+	<p>Delivery Address:{{address}}</p>
+</body>
+</html>
